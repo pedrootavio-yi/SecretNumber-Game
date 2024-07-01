@@ -1,14 +1,14 @@
 alert("Bem-vindo(a) ao Game NumberSecret!");
 
-let numeroSecreto = 10;
+let numeroSecreto = parseInt(Math.random() * 100 + 1);
 let palpiteDoUsuario;
 let tentativasDoUsuario = 1;
 
 while (palpiteDoUsuario != numeroSecreto) {
-    palpiteDoUsuario = prompt("Eu pensei em um número entre 0 e 10, tente adivinhar qual é...");
+    palpiteDoUsuario = prompt("Eu pensei em um número entre 0 e 100, tente adivinhar qual é...");
 
     if (palpiteDoUsuario == numeroSecreto) {
-        alert(`Isso aí! Você acertou, o número que eu estava pensando era o número (${numeroSecreto}). Total de palpites: ${tentativasDoUsuario}`);
+        break;
     } else {
         if (palpiteDoUsuario > numeroSecreto) {
             alert(`O valor ${palpiteDoUsuario} é maior que o número que pensei... tente novamente!`);
@@ -19,3 +19,5 @@ while (palpiteDoUsuario != numeroSecreto) {
 
     tentativasDoUsuario++;
 }
+
+alert(`Isso aí! Você acertou, o número que eu estava pensando! Era o número (${numeroSecreto}). Total de palpites: ${tentativasDoUsuario}`);
